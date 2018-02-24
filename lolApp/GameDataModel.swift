@@ -10,7 +10,7 @@ import Foundation
 
 class GameDataModel{
     
-    var gameStartTime : Int = 0
+    var gameStartTime : Double = 0
      
     
 }

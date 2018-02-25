@@ -9,6 +9,7 @@
 import UIKit
 import DropDown
 import Alamofire
+import Alamofire_Synchronous
 import SwiftyJSON
 
 class StartViewController: UIViewController {
@@ -85,40 +86,18 @@ class StartViewController: UIViewController {
     
     
     func getLolInfoUser(url: String,parameters: [String : String]){
-        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
-            response in
-            if response.result.isSuccess{
-                let lolJSON : JSON = JSON(response.result.value!)
-                
-                self.updateGameUser(json: lolJSON)
-                self.updateUIUser()
-                print(response)
-                
-                
-            }
-            else {
-                print(response.result.error!)
-            }
-            
-        }
+        let response = Alamofire.request(url, parameters: parameters).responseJSON()
+        let json : JSON  = JSON(response.result.value!)
+        self.updateGameUser(json: json )
+        self.updateUIUser()
         
     }
+    
     func getLolInfo(url: String,parameters: [String : String]){
-        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
-            response in
-            if response.result.isSuccess{
-                
-                print(response)
-                let lolJSON : JSON = JSON(response.result.value!)
-                self.updateGameStatus(json: lolJSON)
-                self.updateUIStatus()
-                
-            }
-            else {
-                print(response.result.error!)
-            }
-            
-        }
+        let response = Alamofire.request(url,parameters: parameters).responseJSON()
+        let json : JSON  = JSON(response.result.value!)
+        self.updateGameStatus(json: json )
+        self.updateUIStatus()
         
     }
     
@@ -172,12 +151,12 @@ class StartViewController: UIViewController {
                 
                 
                 checkLolName(region: regionName, summName: name)
-
+                execute()
                 
             }
         }
-        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(execute), userInfo: nil, repeats: true)
-        timer.fire()
+       // let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(execute), userInfo: nil, repeats: true)
+        //timer.fire()
         
     }
     
@@ -205,3 +184,4 @@ class StartViewController: UIViewController {
     }
     
 }
+

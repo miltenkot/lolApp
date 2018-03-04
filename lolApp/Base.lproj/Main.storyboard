@@ -37,7 +37,7 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="6ng-I3-JdK"/>
                                             <constraint firstAttribute="height" constant="49" id="xq5-9w-WaQ"/>
                                         </constraints>
-                                        <state key="normal" title="eun1">
+                                        <state key="normal" title="region">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>

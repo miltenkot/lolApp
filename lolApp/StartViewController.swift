@@ -25,20 +25,23 @@ class StartViewController: UIViewController {
     //https://eun1.api.riotgames.com/lol/spectator/v3/active-games/by-summoner/{summid}}"
     var APIURL_Summ = ""
     //https://eun1.api.riotgames.com/lol/summoner/v3/summoners/by-name/{nickname}}"
-    let params : [String : String] = ["api_key" : "RGAPI-3ca170df-21f6-4537-a311-f7dddb4f0ea2"]
+    let params : [String : String] = ["api_key" : "RGAPI-e87deeee-cae2-41fe-ba39-24119d5100cc"]
     let gameDataModel = GameDataModel()
     let userDataModel = UserDataModel()
-    
+    let dict = ["RU" : "ru", "BR" : "br1","KR" : "kr","OC" : "oc1","JAPAN" : "jp1","NA": "na1","EUEN": "eun1","EUW" : "euw1","LA1": "la1","LA2": "la2"]
     //MARK: - DropDown Menu
     @IBOutlet weak var regionButton: UIButton!
     
     let changeRegion = DropDown()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         setupDropDowns()
+       
+    
         
     }
     
@@ -62,8 +65,9 @@ class StartViewController: UIViewController {
     
     func setupChangeRegion(){
         changeRegion.anchorView = regionButton
+      
+        changeRegion.dataSource = Array(dict.keys)
         
-        changeRegion.dataSource = ["eun1","euw1","na1"]
         
         changeRegion.selectionAction = { [weak self]
             index, item in
@@ -72,15 +76,18 @@ class StartViewController: UIViewController {
             
         }
         
+        
     }
     func checkLolName(region:String, summName: String){
         
         APIURL_Summ = "https://\(region).api.riotgames.com/lol/summoner/v3/summoners/by-name/\(summName)"
+        print(APIURL_Summ)
         getLolInfoUser(url: APIURL_Summ, parameters: params)
         
     }
     func checkLolStatus(region: String,summId: Int){
         APIURL_Spect = "https://\(region).api.riotgames.com/lol/spectator/v3/active-games/by-summoner/\(summId)"
+        print(APIURL_Spect)
         getLolInfo(url: APIURL_Spect, parameters: params)
     }
     
@@ -147,12 +154,16 @@ class StartViewController: UIViewController {
     @IBAction func searchButton(_ sender: UIBarButtonItem) {
         clearUI()
         if let regionName = changeRegion.selectedItem{
-            if let name = searchingNameOfSummoner.text{
+            
+            if let realRegionName = dict[regionName]{
                 
-                
-                checkLolName(region: regionName, summName: name)
-                execute()
-                
+                if let name = searchingNameOfSummoner.text{
+                    
+                    
+                    checkLolName(region: realRegionName, summName: name)
+                    execute()
+                    
+                }
             }
         }
        // let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(execute), userInfo: nil, repeats: true)
@@ -170,8 +181,10 @@ class StartViewController: UIViewController {
     }
     @objc func execute(){
         if let regionName = changeRegion.selectedItem{
-        checkLolStatus(region: regionName, summId: userDataModel.id)
+            if let realRegionName = dict[regionName]{
+        checkLolStatus(region: realRegionName, summId: userDataModel.id)
             updataImage()
+            }
         }
     }
     func updataImage(){

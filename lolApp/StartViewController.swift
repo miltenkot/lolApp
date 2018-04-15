@@ -14,18 +14,19 @@ import SwiftyJSON
 
 class StartViewController: UIViewController {
     
+    
+    @IBOutlet var infoGameView: UIView!
     @IBOutlet weak var imageOfSummoner: UIImageView!
     
     @IBOutlet weak var searchingNameOfSummoner: UITextField!
     @IBOutlet weak var nameOfSummoner: UILabel!
     @IBOutlet weak var gameStatus: UILabel!
-    
     var imageURL = ""
     var APIURL_Spect = ""
     //https://eun1.api.riotgames.com/lol/spectator/v3/active-games/by-summoner/{summid}}"
     var APIURL_Summ = ""
     //https://eun1.api.riotgames.com/lol/summoner/v3/summoners/by-name/{nickname}}"
-    let params : [String : String] = ["api_key" : "RGAPI-e87deeee-cae2-41fe-ba39-24119d5100cc"]
+    let params : [String : String] = ["api_key" : "RGAPI-b5365708-d001-44d1-bdce-8f490de3f3da"]
     let gameDataModel = GameDataModel()
     let userDataModel = UserDataModel()
     let dict = ["RU" : "ru", "BR" : "br1","KR" : "kr","OC" : "oc1","JAPAN" : "jp1","NA": "na1","EUEN": "eun1","EUW" : "euw1","LA1": "la1","LA2": "la2"]
@@ -141,6 +142,7 @@ class StartViewController: UIViewController {
         
         
         
+        
     }
     func updateUIStatus(){
         if gameDataModel.gameStartTime > 0{
@@ -151,8 +153,19 @@ class StartViewController: UIViewController {
         }
         
     }
-    @IBAction func searchButton(_ sender: UIBarButtonItem) {
-        clearUI()
+    func updateUIView(){
+        self.view.addSubview(infoGameView)
+        infoGameView.center = self.view.center
+        infoGameView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        infoGameView.alpha = 0
+        UIView.animate(withDuration: 0.4){
+            self.infoGameView.alpha = 1
+            self.infoGameView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    @IBAction func searchButton(_ sender: Any) {
+        
         if let regionName = changeRegion.selectedItem{
             
             if let realRegionName = dict[regionName]{
@@ -162,23 +175,18 @@ class StartViewController: UIViewController {
                     
                     checkLolName(region: realRegionName, summName: name)
                     execute()
+                    updateUIView()
                     
                 }
             }
         }
-       // let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(execute), userInfo: nil, repeats: true)
+        // let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(execute), userInfo: nil, repeats: true)
         //timer.fire()
         
     }
     
     
-    
-    func clearUI(){
-        
-        nameOfSummoner.text = ""
-        gameStatus.text = ""
-        
-    }
+
     @objc func execute(){
         if let regionName = changeRegion.selectedItem{
             if let realRegionName = dict[regionName]{

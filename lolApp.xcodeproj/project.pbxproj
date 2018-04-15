@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2483FAA5618D6EA1EEA1DF94 /* Pods_lolApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD39FB0BD9A5CF8D5F16273 /* Pods_lolApp.framework */; };
+		DF1FA4A02083A6EB00F69AA6 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1FA49F2083A6EB00F69AA6 /* RoundImageView.swift */; };
+		DF1FA4A42083BEE700F69AA6 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1FA4A32083BEE700F69AA6 /* RoundedView.swift */; };
 		DF2DB153203B791600406809 /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2DB152203B791600406809 /* GameDataModel.swift */; };
 		DF468587203CC3A9002ED878 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF468586203CC3A9002ED878 /* UserDataModel.swift */; };
 		DF47F164203C7807007717AD /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47F163203C7807007717AD /* StartViewController.swift */; };
@@ -15,12 +17,17 @@
 		DF7BE4E32035B37200E2F7E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7BE4E12035B37200E2F7E1 /* Main.storyboard */; };
 		DF7BE4E52035B37200E2F7E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7BE4E42035B37200E2F7E1 /* Assets.xcassets */; };
 		DF7BE4E82035B37200E2F7E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7BE4E62035B37200E2F7E1 /* LaunchScreen.storyboard */; };
+		DF9D047F205C8E1300203846 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D047E205C8E1300203846 /* RoundedShadowButton.swift */; };
+		DF9D0481205C8F5400203846 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D0480205C8F5400203846 /* RoundedShadowView.swift */; };
+		DF9D0483205C8FAB00203846 /* GradinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D0482205C8FAB00203846 /* GradinetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A0894DF08679EC0B7F97E28 /* Pods-lolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lolApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-lolApp/Pods-lolApp.release.xcconfig"; sourceTree = "<group>"; };
 		8DD39FB0BD9A5CF8D5F16273 /* Pods_lolApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lolApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA533E6AA126559F3A1309B /* Pods-lolApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lolApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lolApp/Pods-lolApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DF1FA49F2083A6EB00F69AA6 /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		DF1FA4A32083BEE700F69AA6 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		DF2DB152203B791600406809 /* GameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataModel.swift; sourceTree = "<group>"; };
 		DF468586203CC3A9002ED878 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		DF47F163203C7807007717AD /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +37,9 @@
 		DF7BE4E42035B37200E2F7E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF7BE4E72035B37200E2F7E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF7BE4E92035B37200E2F7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF9D047E205C8E1300203846 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
+		DF9D0480205C8F5400203846 /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
+		DF9D0482205C8FAB00203846 /* GradinetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradinetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,7 @@
 		DF7BE4DC2035B37200E2F7E1 /* lolApp */ = {
 			isa = PBXGroup;
 			children = (
+				DF9D047D205C8DE100203846 /* View */,
 				DF7BE4DD2035B37200E2F7E1 /* AppDelegate.swift */,
 				DF7BE4E12035B37200E2F7E1 /* Main.storyboard */,
 				DF7BE4E42035B37200E2F7E1 /* Assets.xcassets */,
@@ -92,6 +103,18 @@
 				DF468586203CC3A9002ED878 /* UserDataModel.swift */,
 			);
 			path = lolApp;
+			sourceTree = "<group>";
+		};
+		DF9D047D205C8DE100203846 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF9D047E205C8E1300203846 /* RoundedShadowButton.swift */,
+				DF9D0480205C8F5400203846 /* RoundedShadowView.swift */,
+				DF9D0482205C8FAB00203846 /* GradinetView.swift */,
+				DF1FA49F2083A6EB00F69AA6 /* RoundImageView.swift */,
+				DF1FA4A32083BEE700F69AA6 /* RoundedView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +253,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF468587203CC3A9002ED878 /* UserDataModel.swift in Sources */,
+				DF9D047F205C8E1300203846 /* RoundedShadowButton.swift in Sources */,
+				DF1FA4A42083BEE700F69AA6 /* RoundedView.swift in Sources */,
+				DF9D0481205C8F5400203846 /* RoundedShadowView.swift in Sources */,
+				DF9D0483205C8FAB00203846 /* GradinetView.swift in Sources */,
 				DF47F164203C7807007717AD /* StartViewController.swift in Sources */,
+				DF1FA4A02083A6EB00F69AA6 /* RoundImageView.swift in Sources */,
 				DF2DB153203B791600406809 /* GameDataModel.swift in Sources */,
 				DF7BE4DE2035B37200E2F7E1 /* AppDelegate.swift in Sources */,
 			);

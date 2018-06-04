@@ -32,13 +32,6 @@ class StartViewController: UIViewController {
         searchingNameOfSummoner.delegate = self
     }
     
-    //MARK: - Actions
-    
-    @IBAction func changeRegion(_ sender: Any) {
-        changeRegion.show()
-    }
-    
-    //MARK: Setup
     
     func setupDropDowns() {
         setupChangeRegion()
@@ -54,6 +47,7 @@ class StartViewController: UIViewController {
             self?.regionButton.setTitle(item, for: .normal)
         }
     }
+    //MARK: - URL Data Function
     
     func checkLolName(region:String, summName: String) {
         APIURL_Summ = URLProvider.summonerName(inRegion: region, withSummonerName: summName)
@@ -106,6 +100,8 @@ class StartViewController: UIViewController {
         print(gameDataModel.gameStartTime)
     }
     
+    //MARK: - UIUpdate Function
+    
     func updateUIUser(){
         nameOfSummoner.text = String(userDataModel.name)
     }
@@ -129,6 +125,12 @@ class StartViewController: UIViewController {
             self.infoGameView.alpha = 1
             self.infoGameView.transform = CGAffineTransform.identity
         }
+    }
+    
+    //MARK: - IBActions
+    
+    @IBAction func changeRegion(_ sender: Any) {
+        changeRegion.show()
     }
     
     @IBAction func searchButton(_ sender: Any) {

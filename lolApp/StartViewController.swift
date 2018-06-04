@@ -11,13 +11,15 @@ import DropDown
 import Alamofire
 import Alamofire_Synchronous
 import SwiftyJSON
+import ChameleonFramework
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet var infoGameView: UIView!
     @IBOutlet weak var imageOfSummoner: UIImageView!
     
+    @IBOutlet weak var gameLenghtTimerLabel: UILabel!
     @IBOutlet weak var searchingNameOfSummoner: UITextField!
     @IBOutlet weak var nameOfSummoner: UILabel!
     @IBOutlet weak var gameStatus: UILabel!
@@ -26,31 +28,24 @@ class StartViewController: UIViewController {
     //https://eun1.api.riotgames.com/lol/spectator/v3/active-games/by-summoner/{summid}}"
     var APIURL_Summ = ""
     //https://eun1.api.riotgames.com/lol/summoner/v3/summoners/by-name/{nickname}}"
-    let params : [String : String] = ["api_key" : "RGAPI-b5365708-d001-44d1-bdce-8f490de3f3da"]
+    let params : [String : String] = ["api_key" : "RGAPI-3498c418-50f9-48f1-a0ce-2d7e839db1b6"]
     let gameDataModel = GameDataModel()
     let userDataModel = UserDataModel()
     let dict = ["RU" : "ru", "BR" : "br1","KR" : "kr","OC" : "oc1","JAPAN" : "jp1","NA": "na1","EUEN": "eun1","EUW" : "euw1","LA1": "la1","LA2": "la2"]
-    //MARK: - DropDown Menu
     @IBOutlet weak var regionButton: UIButton!
     
     let changeRegion = DropDown()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         setupDropDowns()
-       
-    
-        
+        searchingNameOfSummoner.delegate = self
+        //_ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateUIStatus), userInfo: nil, repeats: true)
+
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+   
     
     //MARK: - Actions
     
@@ -64,11 +59,11 @@ class StartViewController: UIViewController {
         setupChangeRegion()
     }
     
+    //MARK: - DropDown Menu
     func setupChangeRegion(){
         changeRegion.anchorView = regionButton
       
         changeRegion.dataSource = Array(dict.keys)
-        
         
         changeRegion.selectionAction = { [weak self]
             index, item in
@@ -95,9 +90,10 @@ class StartViewController: UIViewController {
     
     func getLolInfoUser(url: String,parameters: [String : String]){
         let response = Alamofire.request(url, parameters: parameters).responseJSON()
-        let json : JSON  = JSON(response.result.value!)
+         let json : JSON  = JSON(response.result.value)
         self.updateGameUser(json: json )
         self.updateUIUser()
+        
         
     }
     
@@ -144,12 +140,13 @@ class StartViewController: UIViewController {
         
         
     }
-    func updateUIStatus(){
+    @objc func updateUIStatus(){
         if gameDataModel.gameStartTime > 0{
             gameStatus.text = "IN GAME"
         }
         else {
             gameStatus.text = "Smoke"
+            gameLenghtTimerLabel.text = "0"
         }
         
     }
@@ -172,16 +169,16 @@ class StartViewController: UIViewController {
                 
                 if let name = searchingNameOfSummoner.text{
                     
-                    
                     checkLolName(region: realRegionName, summName: name)
-                    execute()
+                    updataImage()
+                    let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(execute), userInfo: nil, repeats: true)
+                    timer.fire()
                     updateUIView()
                     
                 }
             }
         }
-        // let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(execute), userInfo: nil, repeats: true)
-        //timer.fire()
+        
         
     }
     
@@ -191,7 +188,6 @@ class StartViewController: UIViewController {
         if let regionName = changeRegion.selectedItem{
             if let realRegionName = dict[regionName]{
         checkLolStatus(region: realRegionName, summId: userDataModel.id)
-            updataImage()
             }
         }
     }
@@ -202,6 +198,12 @@ class StartViewController: UIViewController {
                 imageOfSummoner.image = UIImage(data: data as Data)
             }
         }
+    }
+    //MARK: - TextField Delegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchingNameOfSummoner.resignFirstResponder()
+        return true
     }
     
 }

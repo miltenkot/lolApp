@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "map16.png",
       "scale" : "1x"
     },
     {
@@ -10,7 +11,6 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "iphone-7-plus-video-game-league-of-legends-wallpaper-id-609807-with-regard-to-league-of-legends-wallpapers-for-iphone-768x1365.jpg",
       "scale" : "3x"
     }
   ],

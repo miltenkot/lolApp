@@ -19,7 +19,6 @@
 		DF7BE4E82035B37200E2F7E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7BE4E62035B37200E2F7E1 /* LaunchScreen.storyboard */; };
 		DF9D047F205C8E1300203846 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D047E205C8E1300203846 /* RoundedShadowButton.swift */; };
 		DF9D0481205C8F5400203846 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D0480205C8F5400203846 /* RoundedShadowView.swift */; };
-		DF9D0483205C8FAB00203846 /* GradinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D0482205C8FAB00203846 /* GradinetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		DF7BE4E92035B37200E2F7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF9D047E205C8E1300203846 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 		DF9D0480205C8F5400203846 /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
-		DF9D0482205C8FAB00203846 /* GradinetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradinetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +108,6 @@
 			children = (
 				DF9D047E205C8E1300203846 /* RoundedShadowButton.swift */,
 				DF9D0480205C8F5400203846 /* RoundedShadowView.swift */,
-				DF9D0482205C8FAB00203846 /* GradinetView.swift */,
 				DF1FA49F2083A6EB00F69AA6 /* RoundImageView.swift */,
 				DF1FA4A32083BEE700F69AA6 /* RoundedView.swift */,
 			);
@@ -147,7 +144,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = miltenkot;
 				TargetAttributes = {
 					DF7BE4D92035B37200E2F7E1 = {
@@ -212,6 +209,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-lolApp/Pods-lolApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-Synchronous/Alamofire_Synchronous.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -219,6 +217,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_Synchronous.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -256,7 +255,6 @@
 				DF9D047F205C8E1300203846 /* RoundedShadowButton.swift in Sources */,
 				DF1FA4A42083BEE700F69AA6 /* RoundedView.swift in Sources */,
 				DF9D0481205C8F5400203846 /* RoundedShadowView.swift in Sources */,
-				DF9D0483205C8FAB00203846 /* GradinetView.swift in Sources */,
 				DF47F164203C7807007717AD /* StartViewController.swift in Sources */,
 				DF1FA4A02083A6EB00F69AA6 /* RoundImageView.swift in Sources */,
 				DF2DB153203B791600406809 /* GameDataModel.swift in Sources */,
@@ -300,6 +298,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -307,6 +306,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -357,6 +357,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -364,6 +365,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

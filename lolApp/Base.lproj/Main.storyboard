@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="krG-ab-zSK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="krG-ab-zSK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-DemiBold</string>
-            <string>AvenirNext-DemiBoldItalic</string>
-            <string>AvenirNext-Heavy</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Start View Controller-->
         <scene sceneID="7tP-85-lqg">
@@ -49,7 +42,7 @@
                                         <rect key="frame" x="8" y="27" width="319" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VVL-18-DOf">
-                                                <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="249" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="vxP-2L-Aof"/>
                                                 </constraints>
@@ -58,10 +51,10 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-IZ-c08" customClass="RoundedShadowButton" customModule="lolApp" customModuleProvider="target">
-                                                <rect key="frame" x="271" y="0.0" width="48" height="30"/>
+                                                <rect key="frame" x="269" y="0.0" width="50" height="30"/>
                                                 <color key="backgroundColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="48" id="P2b-yU-qLX"/>
+                                                    <constraint firstAttribute="width" constant="50" id="P2b-yU-qLX"/>
                                                     <constraint firstAttribute="height" constant="30" id="RMp-Xb-RIp"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>

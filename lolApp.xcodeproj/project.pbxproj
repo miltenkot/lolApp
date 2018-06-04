@@ -13,6 +13,7 @@
 		DF2DB153203B791600406809 /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2DB152203B791600406809 /* GameDataModel.swift */; };
 		DF468587203CC3A9002ED878 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF468586203CC3A9002ED878 /* UserDataModel.swift */; };
 		DF47F164203C7807007717AD /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47F163203C7807007717AD /* StartViewController.swift */; };
+		DF75059F20C5DF130022720A /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF75059E20C5DF130022720A /* URLProvider.swift */; };
 		DF7BE4DE2035B37200E2F7E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7BE4DD2035B37200E2F7E1 /* AppDelegate.swift */; };
 		DF7BE4E32035B37200E2F7E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7BE4E12035B37200E2F7E1 /* Main.storyboard */; };
 		DF7BE4E52035B37200E2F7E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7BE4E42035B37200E2F7E1 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		DF2DB152203B791600406809 /* GameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataModel.swift; sourceTree = "<group>"; };
 		DF468586203CC3A9002ED878 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		DF47F163203C7807007717AD /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		DF75059E20C5DF130022720A /* URLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProvider.swift; sourceTree = "<group>"; };
 		DF7BE4DA2035B37200E2F7E1 /* lolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7BE4DD2035B37200E2F7E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF7BE4E22035B37200E2F7E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,10 +71,49 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DF75059820C5BBAF0022720A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF2DB152203B791600406809 /* GameDataModel.swift */,
+				DF468586203CC3A9002ED878 /* UserDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF75059920C5BBD50022720A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF47F163203C7807007717AD /* StartViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		DF75059A20C5BBFE0022720A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF7BE4DD2035B37200E2F7E1 /* AppDelegate.swift */,
+				DF7BE4E12035B37200E2F7E1 /* Main.storyboard */,
+				DF7BE4E42035B37200E2F7E1 /* Assets.xcassets */,
+				DF7BE4E62035B37200E2F7E1 /* LaunchScreen.storyboard */,
+				DF7BE4E92035B37200E2F7E1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = lolApp;
+			sourceTree = "<group>";
+		};
+		DF7505A020C5DF190022720A /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				DF75059E20C5DF130022720A /* URLProvider.swift */,
+			);
+			name = Providers;
+			sourceTree = "<group>";
+		};
 		DF7BE4D12035B37200E2F7E1 = {
 			isa = PBXGroup;
 			children = (
 				DF7BE4DC2035B37200E2F7E1 /* lolApp */,
+				DF75059A20C5BBFE0022720A /* Supporting Files */,
 				DF7BE4DB2035B37200E2F7E1 /* Products */,
 				BFAAD8CB11FF7BF4ECA07C23 /* Pods */,
 				0420774C616627479CF03B1F /* Frameworks */,
@@ -90,15 +131,10 @@
 		DF7BE4DC2035B37200E2F7E1 /* lolApp */ = {
 			isa = PBXGroup;
 			children = (
+				DF75059820C5BBAF0022720A /* Model */,
 				DF9D047D205C8DE100203846 /* View */,
-				DF7BE4DD2035B37200E2F7E1 /* AppDelegate.swift */,
-				DF7BE4E12035B37200E2F7E1 /* Main.storyboard */,
-				DF7BE4E42035B37200E2F7E1 /* Assets.xcassets */,
-				DF7BE4E62035B37200E2F7E1 /* LaunchScreen.storyboard */,
-				DF7BE4E92035B37200E2F7E1 /* Info.plist */,
-				DF47F163203C7807007717AD /* StartViewController.swift */,
-				DF2DB152203B791600406809 /* GameDataModel.swift */,
-				DF468586203CC3A9002ED878 /* UserDataModel.swift */,
+				DF75059920C5BBD50022720A /* Controller */,
+				DF7505A020C5DF190022720A /* Providers */,
 			);
 			path = lolApp;
 			sourceTree = "<group>";
@@ -256,6 +292,7 @@
 				DF1FA4A42083BEE700F69AA6 /* RoundedView.swift in Sources */,
 				DF9D0481205C8F5400203846 /* RoundedShadowView.swift in Sources */,
 				DF47F164203C7807007717AD /* StartViewController.swift in Sources */,
+				DF75059F20C5DF130022720A /* URLProvider.swift in Sources */,
 				DF1FA4A02083A6EB00F69AA6 /* RoundImageView.swift in Sources */,
 				DF2DB153203B791600406809 /* GameDataModel.swift in Sources */,
 				DF7BE4DE2035B37200E2F7E1 /* AppDelegate.swift in Sources */,

@@ -20,6 +20,8 @@
 		DF7BE4E82035B37200E2F7E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7BE4E62035B37200E2F7E1 /* LaunchScreen.storyboard */; };
 		DF9D047F205C8E1300203846 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D047E205C8E1300203846 /* RoundedShadowButton.swift */; };
 		DF9D0481205C8F5400203846 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D0480205C8F5400203846 /* RoundedShadowView.swift */; };
+		DFAE44DC20C8799F00A13704 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE44DB20C8799F00A13704 /* Region.swift */; };
+		DFAE44DE20C87E3E00A13704 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE44DD20C87E3E00A13704 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		DF7BE4E92035B37200E2F7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF9D047E205C8E1300203846 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 		DF9D0480205C8F5400203846 /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
+		DFAE44DB20C8799F00A13704 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		DFAE44DD20C87E3E00A13704 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 			children = (
 				DF2DB152203B791600406809 /* GameDataModel.swift */,
 				DF468586203CC3A9002ED878 /* UserDataModel.swift */,
+				DFAE44DB20C8799F00A13704 /* Region.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 				DF9D047D205C8DE100203846 /* View */,
 				DF75059920C5BBD50022720A /* Controller */,
 				DF7505A020C5DF190022720A /* Providers */,
+				DFAE44DF20C87E6100A13704 /* Resources */,
 			);
 			path = lolApp;
 			sourceTree = "<group>";
@@ -148,6 +154,14 @@
 				DF1FA4A32083BEE700F69AA6 /* RoundedView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DFAE44DF20C87E6100A13704 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DFAE44DD20C87E3E00A13704 /* Constants.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,10 +304,12 @@
 				DF468587203CC3A9002ED878 /* UserDataModel.swift in Sources */,
 				DF9D047F205C8E1300203846 /* RoundedShadowButton.swift in Sources */,
 				DF1FA4A42083BEE700F69AA6 /* RoundedView.swift in Sources */,
+				DFAE44DC20C8799F00A13704 /* Region.swift in Sources */,
 				DF9D0481205C8F5400203846 /* RoundedShadowView.swift in Sources */,
 				DF47F164203C7807007717AD /* StartViewController.swift in Sources */,
 				DF75059F20C5DF130022720A /* URLProvider.swift in Sources */,
 				DF1FA4A02083A6EB00F69AA6 /* RoundImageView.swift in Sources */,
+				DFAE44DE20C87E3E00A13704 /* Constants.swift in Sources */,
 				DF2DB153203B791600406809 /* GameDataModel.swift in Sources */,
 				DF7BE4DE2035B37200E2F7E1 /* AppDelegate.swift in Sources */,
 			);

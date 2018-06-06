@@ -20,10 +20,9 @@ class StartViewController: UIViewController {
     private var imageURL = ""
     private var APIURL_Spect = ""
     private var APIURL_Summ = ""
-    private let params: [String: String] = ["api_key": "RGAPI-3498c418-50f9-48f1-a0ce-2d7e839db1b6"]
     private let gameDataModel = GameDataModel()
     private let userDataModel = UserDataModel()
-    private let dict: [String: String] = ["RU": "ru", "BR": "br1", "KR": "kr", "OC": "oc1", "JAPAN": "jp1", "NA": "na1","EUEN": "eun1", "EUW": "euw1", "LA1": "la1", "LA2": "la2"]
+    private let dict: [String: String] = Region.getRegions()
     private let changeRegion = DropDown()
     
     override func viewDidLoad() {
@@ -76,13 +75,13 @@ class StartViewController: UIViewController {
     }
     
     func updateGameUser(json: JSON) {
-        if let summ = json["name"].string {
+        if let summ = json[SUMMONER_NAME].string {
             userDataModel.name = summ
-            userDataModel.profileIconId = json["profileIconId"].intValue
-            userDataModel.id = json["id"].intValue
+            userDataModel.profileIconId = json[PROFILE_ICON_ID].intValue
+            userDataModel.id = json[SUMMONER_ID].intValue
         }
         else {
-            userDataModel.name = "motherfucker"
+            userDataModel.name = UNKNOWN_USER_NAME
             userDataModel.profileIconId = 0
             userDataModel.id = 0
         }
@@ -91,7 +90,7 @@ class StartViewController: UIViewController {
     }
     
     func updateGameStatus(json: JSON) {
-        if let time = json["gameStartTime"].double {
+        if let time = json[GAME_START_TIME].double {
             gameDataModel.gameStartTime = Double(time)
         }
         else {
@@ -108,10 +107,10 @@ class StartViewController: UIViewController {
     
     @objc func updateUIStatus() {
         if gameDataModel.gameStartTime > 0 {
-            gameStatus.text = "IN GAME"
+            gameStatus.text = IN_GAME_STATUS
         }
         else {
-            gameStatus.text = "Smoke"
+            gameStatus.text = OUT_OF_GAME_STATUS
             gameLenghtTimerLabel.text = "0"
         }
     }

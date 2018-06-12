@@ -1,7 +1,7 @@
 
 import Foundation
 //api key
-let params: [String: String] = ["api_key": "RGAPI-3498c418-50f9-48f1-a0ce-2d7e839db1b6"]
+let params: [String: String] = ["api_key": "RGAPI-a820fd72-38f7-4017-92e4-136c43c2cd8e"]
 //json 
 let SUMMONER_NAME = "name"
 let PROFILE_ICON_ID = "profileIconId"

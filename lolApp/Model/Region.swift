@@ -19,5 +19,18 @@ class Region {
     static func getRegions() -> [String: String]{
         return self.regions
     }
+    struct config {
+        static var region = "EUW"
+    }
     
+    class var region: String {
+        get {
+            return regions[config.region]!
+            
+        }
+        set {
+            config.region = newValue
+            
+        }
+    }
 }
